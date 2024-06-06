@@ -48,7 +48,7 @@
           bebedouros && bebedouros.map((item, index) => {
 
             // Cálculo da porcentagem
-            let porcentagem = item.volume && item.capacidade ? ((100 * item.volume) / item.capacidade) : 0
+            let porcentagem = item.volume && item.capacidade ? ((100 * (item.volume * 1000)) / item.capacidade) : 0
             let agua = 0
             switch (true) {
               case porcentagem <= 5:
@@ -112,7 +112,7 @@
                       <Text style={styles.percent}>{porcentagem}%</Text>
                       <Text style={styles.title}>{item.nome}</Text>
                       <Text style={styles.info}>Capacidade: {item.capacidade}ml</Text>
-                      <Text style={styles.info}>Volume: {item.volume}ml</Text>
+                      <Text style={styles.info}>Volume: {item.volume}L</Text>
                     </View>
                 }
               </View>
@@ -159,7 +159,7 @@
 
     percent: {
       textAlign: 'center',
-      fontSize: 80,
+      fontSize: 70,
       color: '#F7F4F2'
     },
     title: {
